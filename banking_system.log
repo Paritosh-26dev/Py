@@ -1,0 +1,20 @@
+2023-05-13 23:47:49,145 - INFO - Depositing 10000 INR to account of user Paritosh
+2023-05-13 23:48:00,843 - INFO - Withdrawing 3000 INR from account of user Paritosh
+2023-05-13 23:49:49,026 - INFO - Withdrawing 100 INR from account of user Dev
+2023-05-13 23:50:00,254 - INFO - Depositing 2500 INR to account of user Dev
+2023-05-13 23:50:59,744 - INFO - Withdrawing 500 INR from account of user Dev
+2023-05-13 23:51:09,934 - INFO - Deleting account for user Dev
+2023-05-13 23:51:29,342 - INFO - Withdrawing 1 INR from account of user Dev
+2023-05-13 23:51:37,231 - INFO - Depositing 5000 INR to account of user Dev
+2023-05-13 23:52:31,735 - INFO - Withdrawing 1 INR from account of user Paritosh
+2023-05-13 23:52:44,196 - INFO - Depositing 5000 INR to account of user Paritosh
+2023-05-13 23:52:54,035 - INFO - Withdrawing 1000 INR from account of user Paritosh
+2023-05-18 19:50:44,466 - INFO - Depositing 3000 rupees to account of user Aman
+2023-05-18 19:50:53,759 - INFO - Withdrawing 500 rupees from account of user Aman
+2023-05-18 19:51:23,719 - INFO - Depositing 2000 rupees to account of user Paritosh
+2023-05-18 19:51:52,490 - INFO - Transferring 500 rupees from account of user Paritosh to account of user Aman
+2023-05-18 19:54:03,032 - INFO - Transferring 500 rupees from account of user Paritosh to account of user Aman
+2023-05-18 19:54:14,919 - INFO - Deleting account for user Paritosh
+2023-05-18 19:54:57,560 - INFO - Depositing 4500 rupees to account of user Paritosh
+2023-05-18 19:55:46,035 - INFO - Depositing 10000 rupees to account of user Aditya
+2023-05-18 19:55:57,679 - INFO - Transferring 2000 rupees from account of user Aditya to account of user Rahul
