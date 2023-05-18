@@ -1,65 +1,75 @@
 import argparse
+import timeit
 import fnmatch
 import os
 import sys
 import re
 import time
 import logging
+import doctest
 from pathlib import Path
 
-LOG_FILENAME = str(Path.home() / '.find.py.log')
-logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO)
+# Initialize logging
+logging.basicConfig(filename='pyfind.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
 
 def main():
-    parser = argparse.ArgumentParser(description='Find files matching specified criteria')
-    parser.add_argument('-type', help='File is of type `type`')
-    parser.add_argument('-atime', type=int, help='File was last accessed `n*24` hours ago')
-    parser.add_argument('-group', help='File belongs to group `gname` (numeric group ID allowed)')
-    parser.add_argument('-name', help='Base of file name matches shell pattern `pattern`')
-    parser.add_argument('-regex', help='File name matches regular expression `pattern`')
-    parser.add_argument('-newer', help='File was modified more recently than `file`')
-    parser.add_argument('-version', action='version', version='%(prog)s 1.0')
-    parser.add_argument('--test', action='store_true', help='Run automated unit tests')
-    parser.add_argument('--benchmark', action='store_true', help='Run benchmark on core functions')
+    parser = argparse.ArgumentParser(description="Find files matching specified criteria")
+    parser.add_argument("path", nargs="*", default=".", help="Path(s) to search for files")
+    parser.add_argument("-type", help="File is of type `type`")
+    parser.add_argument("-atime", type=int, help="File was last accessed `n*24` hours ago")
+    parser.add_argument("-group", help="File belongs to group `gname` (numeric group ID allowed)")
+    parser.add_argument("-name", help="Base of file name matches shell pattern `pattern`")
+    parser.add_argument("-regex", help="File name matches regular expression `pattern`")
+    parser.add_argument("-newer", help="File was modified more recently than `file`")
+    parser.add_argument("-version", action="version", version="%(prog)s 1.0")
+    parser.add_argument("--test", action="store_true", help="Run automated unit tests")
+    parser.add_argument("--benchmark", action="store_true", help="Run benchmark on core functions")
     args = parser.parse_args()
 
-    command = ' '.join(sys.argv)
-    logging.info(f'{time.time()}] {sys.argv[0]} {command}')
+    command = " ".join(sys.argv)
+    logging.info(f"{time.time()} {command}")
 
-    if args.help:
+    if hasattr(args, "help") and args.help:
         parser.print_help()
         sys.exit()
 
     if args.test:
-        run_tests()
-        sys.exit()
+        doctest.testmod()
 
     if args.benchmark:
-        run_benchmark()
+        print(timeit.timeit("search_files(args.path[0], '*', True)",setup="from __main__ import search_files, args",number=1000,))
+        print(timeit.timeit("search_in_file('test.txt', 'hello', False)",setup="from __main__ import search_in_file",number=1000, ))
         sys.exit()
 
-    #  implement find operation based on arguments
-    for root, dirs, files in os.walk('.'):
-        for name in files:
-            if args.type and not os.path.isfile(name):
-                continue
-            if args.atime and (time.time() - os.path.getatime(name)) // (24 * 3600) != args.atime:
-                continue
-            if args.group and args.group != os.stat(name).st_gid:
-                continue
-            if args.name and not fnmatch.fnmatch(name, args.name):
-                continue
-            if args.regex and not re.match(args.regex, os.path.join(root, name)):
-                continue
-            if args.newer and os.path.getmtime(name) <= os.path.getmtime(args.newer):
-                continue
-            print(os.path.join(root, name))
+    # Implement find operation based on arguments
+    matching_files = []
+    for path in args.path:
+        for root, dirs, files in os.walk(path):
+            for name in files:
+                filepath = os.path.join(root, name)
+                if args.type and not os.path.isfile(filepath):
+                    continue
+                if args.atime:
+                    access_time = os.path.getatime(filepath)
+                    time_threshold = args.atime * 24 * 3600
+                    last_access_limit = time.time() - time_threshold
+                    if access_time > last_access_limit:
+                        continue
+                if args.group and args.group != os.stat(filepath).st_gid:
+                    continue
+                if args.name and not fnmatch.fnmatch(name, args.name):
+                    continue
+                if args.regex and not re.search(args.regex, filepath):
+                    continue
+                if args.newer and os.path.getmtime(filepath) <= os.path.getmtime(args.newer):
+                    continue
+                matching_files.append(filepath)
 
-def run_tests():
-    # implement automated tests
-    pass
+    # Print the matching file paths
+    for filepath in matching_files:
+        print(filepath)
 
-def run_benchmark():
-    # implement benchmark
-    pass
 
+if __name__ == "__main__":
+    main()

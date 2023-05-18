@@ -7,11 +7,8 @@ import re
 import sys
 import time
 
+# Returns a list of files under the given directory path that match the given pattern. Performs recurrsive as well
 def search_files(directory_path, pattern, recursive):
-    """
-    Returns a list of files under the given directory path that match the given pattern.
-    If recursive is True, the search is performed recursively.
-    """
     if not os.path.isdir(directory_path):
         print(f"grep.py: {directory_path}: No such directory")
         return []
@@ -49,8 +46,7 @@ def grep(pattern, directory_path, recursive, print_line_numbers, count_only, fil
     If print_line_numbers is True, prints the line numbers along with the matching lines.
     If count_only is True, prints only the count of matching lines in each file.
     If files_with_matches_only is True, prints only the names of the files with matching lines.
-    The search is limited to files that match the include_pattern (if given) and do not match the exclude_pattern
-    (if given).
+    The search is limited to files that match the include_pattern and do not match the exclude_pattern.
     """
     files = []
     if os.path.isfile(directory_path):
@@ -86,19 +82,18 @@ def grep(pattern, directory_path, recursive, print_line_numbers, count_only, fil
     if count_only and len(files) > 1:
         print(f"Total matches: {match_count}")
 
-    with open(os.path.expanduser("~/.grep.py.log"), "a") as log_file:
+    with open(os.path.expanduser("pygrep.log"), "a") as log_file:
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         full_cmd = " ".join(sys.argv)
         log_file.write(f"[{timestamp}] {full_cmd}\n")
 
 def main():
     # configure logging
-    log_file_path = os.path.expanduser("~/.grep.py.log")
-    logging.basicConfig(filename=log_file_path, level=logging.INFO)
+    logging.basicConfig(filename='pygrep.log', level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
     # log the command-line arguments
-    command_line_args = " ".join([f"'{arg}'" for arg in sys.argv[1:]])
-    logging.info(f"[{time.time()}] {sys.argv[0]} {command_line_args}")
+    command = " ".join(sys.argv)
+    logging.info(f"{time.time()} {command}")
     
     parser = argparse.ArgumentParser(description="Search for a pattern in files.")
     parser.add_argument("pattern", help="pattern to search for")
@@ -109,7 +104,7 @@ def main():
     parser.add_argument("-R", "-r", "--recursive", action="store_true", help="search files recursively")
     parser.add_argument("--include", help="search only files that match the specified pattern")
     parser.add_argument("--exclude", help="skip files and directories matching the specified pattern")
-    parser.add_argument("--version", action="version", version="%(prog)s 1.0")
+    parser.add_argument("-V", "--version", action="version", version="%(prog)s 1.0")
     parser.add_argument("--test", action="store_true", help="run automated unit tests")
     parser.add_argument("--benchmark", action="store_true", help="run benchmark on core functions")
 
@@ -137,3 +132,5 @@ def main():
 
     grep(pattern, directory_path, recursive, print_line_numbers, count_only, files_with_matches_only, include_pattern, exclude_pattern)
 
+if __name__ == '__main__':
+    main()

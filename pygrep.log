@@ -1,0 +1,36 @@
+2023-05-19 00:52:46,042 - INFO - 1684437766.0424156 grep.py 'hello' 'D:\VSCode\Python\test.txt' '-R' '-n' '--exclude=*.txt'
+2023-05-19 00:56:32,946 - INFO - 1684437992.9467316 grep.py grep.py hello D:\VSCode\Python\test.txt -R -n --exclude=*.txt
+2023-05-19 00:57:36,757 - INFO - 1684438056.7575104 grep.py grep.py --help
+2023-05-19 00:57:57,689 - INFO - 1684438077.6890957 grep.py --help
+2023-05-19 00:59:40,350 - INFO - 1684438180.3501108 grep.py -c hello file.txt
+2023-05-19 00:59:48,497 - INFO - 1684438188.4974036 grep.py -c hello test.txt
+2023-05-19 01:01:18,049 - INFO - 1684438278.0496652 grep.py -c hello test.txt
+2023-05-19 01:02:49,530 - INFO - 1684438369.5300908 grep.py -l hello /path/to/files
+2023-05-19 01:03:39,606 - INFO - 1684438419.6069548 grep.py -l hello D:\VSCode\Python
+2023-05-19 01:04:08,745 - INFO - 1684438448.7459755 grep.py -l hello C:\Users\PD\Documents
+2023-05-19 01:05:06,161 - INFO - 1684438506.1610684 grep.py -l hello D:\My Games
+2023-05-19 01:05:25,308 - INFO - 1684438525.308065 grep.py -l hello D:\My Games
+2023-05-19 01:06:20,923 - INFO - 1684438580.9230816 grep.py -l list D:\My Games
+2023-05-19 01:07:46,319 - INFO - 1684438666.3192585 grep.py -n hello file.txt
+2023-05-19 01:07:54,443 - INFO - 1684438674.4434993 grep.py -n hello test.txt
+2023-05-19 01:08:15,225 - INFO - 1684438695.225152 grep.py hello /path/to/files -R
+2023-05-19 01:08:43,242 - INFO - 1684438723.2423031 grep.py hello D:\VSCode\Python -R
+2023-05-19 01:12:39,806 - INFO - 1684438959.806607 grep.py hello D:\VSCode\Python -R --include=*.txt
+2023-05-19 01:12:59,975 - INFO - 1684438979.9755163 grep.py hel D:\VSCode\Python -R --include=*.txt
+2023-05-19 01:13:15,530 - INFO - 1684438995.530847 grep.py lo D:\VSCode\Python -R --include=*.txt
+2023-05-19 01:13:47,923 - INFO - 1684439027.923647 grep.py lo D:\VSCode\Python -R --exclude=*.txt
+2023-05-19 01:16:14,758 - INFO - 1684439174.7585 grep.py --version
+2023-05-19 01:16:25,021 - INFO - 1684439185.0218701 grep.py -V
+2023-05-19 01:16:52,159 - INFO - 1684439212.1593494 grep.py --test
+2023-05-19 01:17:20,362 - INFO - 1684439240.3620498 grep.py --test
+2023-05-19 01:17:49,916 - INFO - 1684439269.9160624 grep.py --test hello
+2023-05-19 01:18:05,710 - INFO - 1684439285.7104158 grep.py --test hello D:\VSCode\Python
+2023-05-19 01:18:13,288 - INFO - 1684439293.288881 grep.py --test hello D:\VSCode\Python\test.txt
+2023-05-19 01:18:16,836 - INFO - 1684439296.836764 grep.py --test
+2023-05-19 01:18:42,806 - INFO - 1684439322.8068542 grep.py --benchmark
+2023-05-19 01:21:35,537 - INFO - 1684439495.5371335 grep.py --test
+2023-05-19 01:21:45,481 - INFO - 1684439505.4817994 grep.py --version
+2023-05-19 01:34:44,018 - INFO - 1684440284.0185041 grep.py --benchmark
+2023-05-19 01:34:55,292 - INFO - 1684440295.2925773 grep.py lo D:\VSCode\Python -R --include=*.txt
+2023-05-19 01:35:13,126 - INFO - 1684440313.1268165 grep.py lo D:\VSCode\Python -R --include=*.txt
+[2023-05-19 01:35:13] grep.py lo D:\VSCode\Python -R --include=*.txt

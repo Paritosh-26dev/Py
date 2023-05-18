@@ -1,0 +1,33 @@
+2023-05-18 23:02:42,353 - INFO - 1684431162.3539734] find.py find.py -atime 2 C:\Users\PD\Documents
+2023-05-18 23:06:01,253 - INFO - 1684431361.2537603] find.py find.py -atime 27 C:\Users\PD\Documents
+2023-05-18 23:06:13,951 - INFO - 1684431373.9507694] find.py find.py -type f C:\Users\PD\Documents
+2023-05-18 23:06:33,163 - INFO - 1684431393.1639004] find.py find.py -type f D:\VSCode\Python
+2023-05-18 23:09:09,528 - INFO - 1684431549.5272021] find.py find.py -newer .\hello_world.py
+2023-05-18 23:09:26,214 - INFO - 1684431566.2146475] find.py find.py -newer .\test.txt
+2023-05-18 23:11:43,485 - INFO - 1684431703.4858973] find.py find.py -name .py D:\VSCode\Python
+2023-05-18 23:11:51,691 - INFO - 1684431711.6918056] find.py find.py -name *.py D:\VSCode\Python
+2023-05-18 23:15:15,140 - INFO - 1684431915.1400456] find.py find.py -group bank D:\VSCode\Python
+2023-05-18 23:16:58,792 - INFO - 1684432018.792411] find.py find.py -regex ^banking_.*\.py$ D:\VSCode\Python
+2023-05-18 23:18:10,733 - INFO - 1684432090.7334328] find.py find.py -group users
+2023-05-18 23:19:03,351 - INFO - 1684432143.3514674] find.py find.py -group pdf C:\Users\PD\Documents
+2023-05-18 23:19:08,297 - INFO - 1684432148.2978108] find.py find.py -group pdf C:\Users\PD\Documents
+2023-05-18 23:26:54,899 - INFO - 1684432614.8996549] find.py find.py --test
+2023-05-18 23:46:00,327 - INFO - 1684433760.3276038 find.py --test find.py
+2023-05-18 23:46:12,402 - INFO - 1684433772.4023309 find.py --test find.py
+2023-05-18 23:48:19,037 - INFO - 1684433899.0379934 find.py --test --test
+2023-05-18 23:48:41,271 - INFO - 1684433921.2715685 d:\VSCode\Python\find.py
+2023-05-18 23:48:52,588 - INFO - 1684433932.5883331 find.py --test
+2023-05-18 23:57:49,587 - INFO - 1684434469.5870154 find.py -regex ^banking_.*.py$ D:\VSCode\Python
+2023-05-18 23:58:12,871 - INFO - 1684434492.8719013 find.py -regex ^b.*.py$ D:\VSCode\Python
+2023-05-18 23:59:23,624 - INFO - 1684434563.6234252 find.py -regex ^banking_system$ D:\VSCode\Python
+2023-05-18 23:59:32,300 - INFO - 1684434572.3008587 find.py -regex ^banking_system.py$ D:\VSCode\Python
+2023-05-19 00:00:21,121 - INFO - 1684434621.121989 find.py -regex py$ D:\VSCode\Python
+2023-05-19 00:08:39,197 - INFO - 1684435119.1976907 find.py -regex ^A C:\Users\PD\Documents
+2023-05-19 00:10:11,959 - INFO - 1684435211.9592946 find.py -regex ^A C:\Users\PD\Documents
+2023-05-19 00:10:16,257 - INFO - 1684435216.257287 find.py -regex py$ D:\VSCode\Python
+2023-05-19 00:17:10,698 - INFO - 1684435630.6984615 find.py -atime 7 D:\VSCode
+2023-05-19 00:25:38,305 - INFO - 1684436138.3059351 find.py -atime 7 D:\VSCode\Python\
+2023-05-19 00:25:43,450 - INFO - 1684436143.4502616 find.py -atime 7 D:\VSCode\Python
+2023-05-19 00:26:41,725 - INFO - 1684436201.725474 find.py -atime 70 D:\VSCode\Python
+2023-05-19 00:31:15,163 - INFO - 1684436475.163039 find.py -type f D:\VSCode\Python
+2023-05-19 00:32:41,496 - INFO - 1684436561.49657 find.py -type f D:\VSCode\Python
